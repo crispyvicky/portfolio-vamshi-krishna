@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Vinay Teja Portfolio",
-  description: "Founder and CEO of Visiontech pvt ltd",
+  title: "Vamshi Krishna Portfolio",
+  description: "Co-Founder and Managing Director of Visiontech pvt ltd",
 };
 
 export default function RootLayout({ children }) {

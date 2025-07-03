@@ -34,17 +34,22 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="w-11/12 max-w-6xl mx-auto flex flex-col items-center py-16">
-      <h2 className="text-[#000] font-extrabold text-4xl mb-2">Services</h2>
-      <p className="text-lg text-gray-600 mb-10 text-center">
+    <section
+      id="services"
+      className="w-11/12 max-w-6xl mx-auto flex flex-col items-center py-16 px-4"
+    >
+      <h2 className="text-[#000] font-extrabold text-3xl sm:text-4xl mb-2">
+        Services
+      </h2>
+      <p className="text-base sm:text-lg text-gray-600 mb-10 text-center">
         What I Do — And What I Can Help You Do
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
         {SERVICES_ARRAY.map((service) => (
           <motion.div
             key={service.id}
-            className="relative h-[300px] rounded-3xl overflow-hidden shadow-2xl cursor-pointer group"
+            className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl cursor-pointer group"
             onMouseEnter={() => setHoverIndex(service.id)}
             onMouseLeave={() => setHoverIndex(null)}
           >
@@ -54,24 +59,25 @@ const Services = () => {
               alt={service.name}
               className="absolute inset-0 w-full h-full object-cover"
               animate={{
-                scale: hoverIndex === service.id ? 1.2 : 1,
+                scale: hoverIndex === service.id ? 1.15 : 1,
               }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             />
 
+            {/* Overlay content */}
             <div className="absolute bottom-4 w-full flex flex-col items-center z-10">
-              {/* Button slides upward on hover */}
+              {/* Button */}
               <motion.button
                 className="bg-white/90 backdrop-blur-sm w-11/12 h-12 rounded-xl text-sm font-bold text-gray-900 shadow-md"
                 animate={{
                   y: hoverIndex === service.id ? -30 : 0,
                 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               >
                 {service.name}
               </motion.button>
 
-              {/* Description appears below the button */}
+              {/* Description */}
               <AnimatePresence>
                 {hoverIndex === service.id && (
                   <motion.p
@@ -80,7 +86,7 @@ const Services = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="text-white text-center text-sm mt-1 w-11/12"
+                    className="text-white text-center text-xs sm:text-sm mt-2 w-11/12"
                   >
                     {service.des}
                   </motion.p>
