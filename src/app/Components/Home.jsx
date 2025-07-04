@@ -14,24 +14,20 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   const SOCIAL_LINKS = [
-    {
-      name: "facebook",
-      link: "https://www.facebook.com/people/VisionTech-Group/61576090701067/",
-      icon: <FaFacebook />,
-    },
+    
     {
       name: "twitter",
-      link: "https://x.com/GroupVisiontech",
+      link: "https://x.com/VamshiKris8918?t=0i652qsfotBdyjEg83ZnCQ&s=08 ",
       icon: <SiX />,
     },
     {
       name: "instagram",
-      link: "https://www.instagram.com/vinayteja_19/",
+      link: "https://www.instagram.com/vamshikrish013?igsh=dDAyNjNiZ21oNjg3",
       icon: <FaInstagram />,
     },
     {
       name: "linkedin",
-      link: "https://www.linkedin.com/in/vinay-teja-2aa29a1a1/",
+      link: " https://www.linkedin.com/in/vamshi-krishna-edla-2334a8221/",
       icon: <FaLinkedin />,
     },
     {
