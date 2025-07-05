@@ -3,6 +3,50 @@ import React, { useState } from "react";
 
 const Contact = () => {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendForm = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xeokwarb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSent(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setError(true);
+      }
+    } catch (err) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div
@@ -19,36 +63,42 @@ const Contact = () => {
       </p>
 
       <form
-        action="https://formspree.io/f/xeokwarb"
-        method="POST"
-        onSubmit={() => setSent(true)}
+        onSubmit={sendForm}
         className="mt-8 w-full max-w-xl flex flex-col gap-4"
       >
         <input
           type="text"
           name="name"
+          value={formData.name}
+          onChange={handleChange}
           placeholder="Your Name"
           required
           className="border p-3 rounded-xl text-base outline-none"
         />
+
         <input
           type="email"
           name="email"
+          value={formData.email}
+          onChange={handleChange}
           placeholder="Your Email"
           required
           className="border p-3 rounded-xl text-base outline-none"
         />
+
         <input
           type="tel"
           name="phone"
+          value={formData.phone}
+          onChange={handleChange}
           placeholder="Your Phone Number"
-          required
-          pattern="[0-9]{10}"
-          title="Enter a 10-digit phone number"
           className="border p-3 rounded-xl text-base outline-none"
         />
+
         <textarea
           name="message"
+          value={formData.message}
+          onChange={handleChange}
           placeholder="Your Message"
           rows="5"
           required
@@ -59,13 +109,18 @@ const Contact = () => {
           type="submit"
           className="bg-[#BA22A3D9] text-white p-3 rounded-xl font-semibold transition hover:opacity-90"
         >
-          {sent ? "Message Sent ✅" : "Send Message"}
+          {loading ? "Sending..." : sent ? "Message Sent ✅" : "Send Message"}
         </button>
       </form>
 
       {sent && (
         <p className="text-green-600 mt-4 font-semibold">
           Your message has been sent successfully!
+        </p>
+      )}
+      {error && (
+        <p className="text-red-500 mt-4 font-semibold">
+          Oops! Something went wrong. Try again later.
         </p>
       )}
 
