@@ -19,7 +19,6 @@ const Footer = () => {
   ];
 
   const SOCIAL_LINKS = [
-    
     {
       name: "twitter",
       link: "https://x.com/VamshiKris8918?t=0i652qsfotBdyjEg83ZnCQ&s=08",
@@ -74,7 +73,11 @@ const Footer = () => {
               key={social.name}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#BA22A3] transition"
+              className={`transition p-2 rounded-full ${
+                social.name === "linkedin"
+                  ? "ring-4 ring-[#0A66C2] bg-white shadow-md hover:scale-110"
+                  : "hover:text-[#BA22A3]"
+              }`}
             >
               {social.icon}
             </Link>

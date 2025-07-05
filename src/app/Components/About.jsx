@@ -31,13 +31,13 @@ const About = () => {
         className="flex flex-col justify-center text-center lg:text-left"
       >
         <h2 className="text-4xl font-bold mb-6">About Me</h2>
-        <p className="text-base sm:text-lg font-semibold mb-4 text-gray-800">
+        <p className="text-sm sm:text-base lg:text-lg font-semibold mt-4 text-gray-700">
           VisionTech was built with a clear purpose to transform how we learn,
           grow, and lead in a world defined by constant change. It stands as a
           space where innovation shapes education, and knowledge evolves into
           real-world impact.
         </p>
-        <p className="text-base sm:text-lg font-semibold mb-4 text-gray-800">
+        <p className="text-sm sm:text-base lg:text-lg font-semibold mt-4 text-gray-700">
           Through a powerful blend of technology, mentorship, and human
           connection, VisionTech cultivates future-ready minds equipped with
           clarity, confidence, and creativity. This journey reflects a deeper

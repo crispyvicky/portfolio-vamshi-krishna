@@ -14,7 +14,6 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   const SOCIAL_LINKS = [
-    
     {
       name: "twitter",
       link: "https://x.com/VamshiKris8918?t=0i652qsfotBdyjEg83ZnCQ&s=08 ",
@@ -27,7 +26,7 @@ const Home = () => {
     },
     {
       name: "linkedin",
-      link: " https://www.linkedin.com/in/vamshi-krishna-edla-2334a8221/",
+      link: "https://www.linkedin.com/in/vamshi-krishna-edla-2334a8221/",
       icon: <FaLinkedin />,
     },
     {
@@ -59,17 +58,17 @@ const Home = () => {
         <p className="text-3xl sm:text-3xl lg:text-3xl font-bold mt-1">
           Co-Founder & Managing Director
         </p>
-        <p className="text-sm sm:text-base lg:text-lg font-medium mt-4 text-gray-700">
+        <p className="text-sm sm:text-base lg:text-lg font-semibold mt-4 text-gray-700">
           In a world driven by acceleration, VisionTech emerged as a force of
           intention built to challenge the ordinary and awaken the
           extraordinary...
         </p>
-        <p className="text-sm sm:text-base lg:text-lg font-medium mt-4 text-gray-700">
+        <p className="text-sm sm:text-base lg:text-lg font-semibold mt-4 text-gray-700">
           Here, innovation is not a subject — it’s a mindset. Community,
           creativity, and code converge to craft experiences that shape
           character as much as skill...
         </p>
-        <button className="text-sm sm:text-base bg-gradient-to-r from-[#9F1089] to-[#593CC2] w-fit px-6 py-3 mt-8 rounded-lg text-white font-semibold hover:opacity-90 transition">
+        <button className="text-sm sm:text-base bg-gradient-to-r from-[#9F1089] to-[#593CC2] w-fit px-6 py-3 mt-8 rounded-lg text-white font-semibold hover:opacity-90 transition cursor-pointer">
           Explore Me
         </button>
       </motion.div>
@@ -82,9 +81,6 @@ const Home = () => {
         viewport={{ once: true }}
         className="flex flex-col items-center justify-center relative w-full"
       >
-        {/* Optional decorative blob behind image */}
-        {/* <img src="/blob.svg" className="absolute z-0 w-[300px]" /> */}
-
         {/* Main Image */}
         <img
           src="/image/image_1.png"
@@ -100,7 +96,11 @@ const Home = () => {
               key={social.name}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#A20895] transition bg-white p-3 rounded-full shadow-lg hover:scale-110"
+              className={`transition bg-white p-3 rounded-full shadow-lg hover:scale-110 ${
+                social.name === "linkedin"
+                  ? "ring-4 text-1xl ring-[#0A66C2]"
+                  : "hover:text-[#A20895]"
+              }`}
             >
               {social.icon}
             </Link>
