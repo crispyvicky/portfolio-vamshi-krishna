@@ -15,7 +15,7 @@ export const metadata = {
   title: "Vamshi Krishna Portfolio",
   description: "Co-Founder and Managing Director of Visiontech pvt ltd",
   icons: {
-    icon: "/faviconn.png", // ✅ Add this line
+    icon: "/favicon.ico", // ✅ Add this line
   },
 };
 
