@@ -83,7 +83,7 @@ const Home = () => {
       >
         {/* Main Image */}
         <img
-          src="/image/image_1.png"
+          src="/image/image_1.jpg"
           alt="Vamshi Krishna"
           className="w-full max-w-[300px] sm:max-w-[350px] object-contain rounded-2xl hover:scale-105 transition-transform duration-300 z-10"
         />
