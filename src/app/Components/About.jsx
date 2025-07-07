@@ -14,7 +14,7 @@ const About = () => {
     },
     {
       name: "Crunchbase",
-      link: "https://www.crunchbase.com/organization/visiontech-academy",
+      link: "https://www.crunchbase.com/organization/visiontech-18be",
       rating: 4.0,
       logo: "/logos/crunchbaselogo.jpg",
     },
@@ -42,85 +42,95 @@ const About = () => {
   return (
     <section
       id="about"
-      className="w-11/12 max-w-6xl mx-auto py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-10"
+      className="relative w-full min-h-screen py-16 text-white z-0 backdrop-blur-sm"
     >
-      {/* Left Side: Image */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex justify-center"
-      >
-        <img
-          src="/image/image_2.png"
-          alt="Vinay Teja"
-          className="w-full max-w-[400px] rounded-3xl hover:scale-105 transition-transform duration-300 object-cover"
-        />
-      </motion.div>
+      <div className="relative z-10 w-11/12 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+        {/* Left Side Image with Background Glow */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center relative w-full max-w-[400px] mx-auto"
+        >
+          {/* Background Glow */}
+          <div
+            className="absolute inset-0 scale-110 blur-xl opacity-40 rounded-3xl z-0"
+            style={{
+              backgroundImage: "url('/image/back2.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
 
-      {/* Right Side: Text + Ratings */}
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col justify-center text-center lg:text-left"
-      >
-        <h2 className="text-4xl font-bold mb-6">About Me</h2>
+          {/* Foreground Image */}
+          <img
+            src="/image/image22.jpg"
+            alt="Vamshi Krishna"
+            className="relative z-10 w-full rounded-3xl hover:scale-105 transition-transform duration-300 object-cover"
+          />
+        </motion.div>
 
-        <p className="text-sm sm:text-base lg:text-lg font-semibold mt-4 text-gray-700">
-          VisionTech was built with a clear purpose to transform how we learn,
-          grow, and lead in a world defined by constant change. It stands as a
-          space where innovation shapes education, and knowledge evolves into
-          real-world impact.
-        </p>
+        {/* Right Side Content */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col justify-center text-center lg:text-left"
+        >
+          <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
 
-        <p className="text-sm sm:text-base lg:text-lg font-semibold mt-4 text-gray-700">
-          Through a powerful blend of technology, mentorship, and human
-          connection, VisionTech cultivates future-ready minds equipped with
-          clarity, confidence, and creativity. This journey reflects a deeper
-          commitment to empower individuals to rise with purpose and lead with
-          vision.
-        </p>
+          <p className="text-sm sm:text-base lg:text-lg font-semibold mt-4 text-gray-800">
+            VisionTech was built with a clear purpose to transform how we learn,
+            grow, and lead in a world defined by constant change. It stands as a
+            space where innovation shapes education, and knowledge evolves into
+            real-world impact.
+          </p>
 
-        {/* Stats Text */}
-        <p className="text-center text-base font-semibold text-gray-700 mt-6">
-          <span className="text-[#42109F] font-bold">VisionTech</span> is recognized as one of the
-          <span className="text-[#42109F] font-bold"> fastest-growing EdTech companies</span> in India.
-        </p>
-        <p className="text-center text-base font-semibold text-gray-700">
-          It is currently growing <span className="text-[#A20895] font-bold">46% faster</span> than most startups in the industry.
-        </p>
+          <p className="text-sm sm:text-base lg:text-lg font-semibold mt-4 text-gray-800">
+            Through a powerful blend of technology, mentorship, and human
+            connection, VisionTech cultivates future-ready minds equipped with
+            clarity, confidence, and creativity. This journey reflects a deeper
+            commitment to empower individuals to rise with purpose and lead with
+            vision.
+          </p>
 
-        {/* Ratings (Side by Side Cards) */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10">
-          {ratings.map((platform, index) => (
-            <a
-              key={index}
-              href={platform.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center bg-white p-4 w-[300px] rounded-xl shadow-md hover:shadow-lg hover:scale-105 hover:ring-2 hover:ring-[#42109F] transition-all"
-            >
-              {/* Left 1/3: Logo */}
-              <div className="w-1/3 flex justify-center items-center">
-                <img
-                  src={platform.logo}
-                  alt={`${platform.name} logo`}
-                  className="w-14 h-14 object-contain"
-                />
-              </div>
+          {/* Highlight Stats */}
+          <p className="text-center text-base font-semibold text-gray-800 mt-6">
+            <span className="text-[#FFD700] font-bold">VisionTech</span> is recognized as one of the
+            <span className="text-[#FFD700] font-bold"> fastest-growing EdTech companies</span> in India.
+          </p>
+          <p className="text-center text-base font-semibold text-gray-800">
+            It is currently growing <span className="text-[#FF66C4] font-bold">46% faster</span> than most startups in the industry.
+          </p>
 
-              {/* Right 2/3: Name & Rating */}
-              <div className="w-2/3 pl-4">
-                <p className="text-sm font-semibold text-gray-800 mb-1">
-                  {platform.name}
-                </p>
-                <div className="flex gap-1">{renderStars(platform.rating)}</div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </motion.div>
+          {/* Platform Ratings */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10">
+            {ratings.map((platform, index) => (
+              <a
+                key={index}
+                href={platform.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center bg-white/10 backdrop-blur-sm p-4 w-[300px] rounded-xl shadow-md hover:shadow-lg hover:scale-105 hover:ring-2 hover:ring-[#42109F] transition-all"
+              >
+                <div className="w-1/3 flex justify-center items-center">
+                  <img
+                    src={platform.logo}
+                    alt={`${platform.name} logo`}
+                    className="w-14 h-14 object-contain"
+                  />
+                </div>
+                <div className="w-2/3 pl-4">
+                  <p className="text-sm font-semibold text-gray-800 mb-1">
+                    {platform.name}
+                  </p>
+                  <div className="flex gap-1">{renderStars(platform.rating)}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };

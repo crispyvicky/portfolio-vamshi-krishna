@@ -14,7 +14,7 @@ const page = () => {
       <Home />
       <About />
       <Services />
-      <Projects />
+      <Projects /> 
       <Contact/>
       <Footer/>
     </div>

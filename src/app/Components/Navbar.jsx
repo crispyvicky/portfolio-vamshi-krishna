@@ -9,13 +9,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const NavBar_Array = [
-    { name: "Home", link: "#home" },
-    { name: "About", link: "#about" },
-    { name: "Services", link: "#services" },
-    { name: "Projects", link: "#project" },
-    { name: "Contact Me", link: "#contact" },
-  ];
-
+  { name: "Home", link: "#home" },
+  { name: "About", link: "#about" },
+  { name: "Services", link: "#services" },
+  { name: "Projects", link: "#project" }, // ✅ Use JS comment
+  { name: "Contact Me", link: "#contact" },
+];
   const LOGO_URL =
     "https://visiontech.world/_next/image?url=%2Fvisiontech-logo-no-background.png&w=640&q=75";
 
