@@ -96,11 +96,11 @@ const Home = () => {
               }}
             ></div>
 
-            {/* Foreground Main Image */}
+            {/* Foreground Main Image relative z-10 w-full rounded-3xl hover:scale-105 transition-transform duration-300 object-cover*/}
             <img
               src="/image/image_1.jpg"
               alt="Vamshi Krishna"
-              className="relative z-10 w-full h-full object-cover rounded-2xl"
+              className="relative z-10 w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-300"
             />
           </div>
 
